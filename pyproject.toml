@@ -1,0 +1,70 @@
+[build-system]
+requires = ["flit_core >=3.5,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "sphinx-demo"
+authors = [{name = "Executable Book Project", email = "executablebooks@gmail.com"}]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Text Processing :: Markup",
+]
+keywords = [
+    "documentation",
+    "sphinx",
+]
+dynamic = ["description", "version"]
+requires-python = ">=3.7"
+dependencies = [
+    "sphinx>4",
+    "sphinx-design",
+]
+
+[project.license]
+file = "LICENSE"
+
+[project.readme]
+file = "README.md"
+content-type = "text/markdown"
+
+[project.urls]
+Homepage = "https://executablebooks.org/"
+Documentation = "https://executablebooks.org/"
+Funding = "https://executablebooks.org"
+Source = "https://github.com/executablebooks/sphinx-demo/"
+Tracker = "https://github.com/executablebooks/sphinx-demo/issues"
+
+[project.optional-dependencies]
+sphinx = [
+    "sphinx-book-theme",
+    "myst-parser",
+]
+
+[tool.flit.module]
+name = "sphinx_demo"
+
+[tool.flit.sdist]
+include = [
+    "src/sphinx_demo/_static/"
+]
+exclude = [
+  ".*",  # Any hidden folders or files
+  "docs/",
+  "tests/",
+  "scripts/",
+  "tox.ini",
+  "codecov.yml",
+  "conftest.py",
+]
+
+[tool.isort]
+profile = "black"
