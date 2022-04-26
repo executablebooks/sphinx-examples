@@ -15,7 +15,7 @@ pip install sphinx-demo
 
 ## Usage
 
-See [the `sphinx-demo` documentation](docs/index.md) for more information.
+See [the `sphinx-demo` documentation](https://ebp-sphinx-demo.readthedocs.io/en/latest/) for more information.
 
 ## Develop
 
