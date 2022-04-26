@@ -1,11 +1,10 @@
 """A lightweight example directive to make it easy to demonstrate code / results."""
 import os
-from docutils.parsers.rst import Directive, directives
-from docutils import nodes
-from sphinx.util.docutils import SphinxDirective
-from docutils.parsers.rst import directives
 from typing import List
 
+from docutils import nodes
+from docutils.parsers.rst import directives
+from sphinx.util.docutils import SphinxDirective
 
 __version__ = "0.0.1"
 
@@ -62,9 +61,10 @@ class ExampleDirective(SphinxDirective):
         # Remove the container styling if requested
         if "no-container" in self.options:
             container.attributes["classes"].append("sd-nostyle")
-            
+
         output.append(container)
         return [output]
+
 
 # We connect this function to the step after the builder is initialized
 def setup(app):
