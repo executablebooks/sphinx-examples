@@ -1,41 +1,10 @@
 /**
  * Example directive styling
  */
-.container.sd-demo {
-    margin-bottom: 1.15rem; /* So there is some white space after the demo */
-}
-
-.container.sd-demo__container {
-    padding: 0em;
-    border: 1px solid #ccc;
-    border-radius: 0.2rem;
-}
-
-.sd-demo__title p {
-    font-weight: bold;
-    font-size: .9em;
-    margin-bottom: 0.2em;
-}
-
-.container.sd-demo__source, .container.sd-demo__result {
-    padding: .2em 1em;
-}
-
-.sd-demo__result {
-    border-top: 1px solid #ccc;
-}
-
-.sd-demo__source > p,
-.sd-demo__result > p {
-    font-weight: bold;
+.sd-example .sd-card-header {
     font-size: .8em;
-    color: #5a5a5a;
 }
 
-/* Helper class to remove all styling from above */
-.sd-nostyle.sd-demo__container,
-.sd-nostyle > .sd-demo__source,
-.sd-nostyle > .sd-demo__result {
-    padding: 0;
-    border: none;
+.sd-example-title p {
+    margin: 0;
 }

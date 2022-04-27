@@ -11,6 +11,9 @@ Here's a sample note!
 :::
 ```
 
+:::{warning}
+This currently only works with MyST Markdown content, it will not work if you've written your documentation in reStructuredText.
+:::
 
 ## Install
 
@@ -32,6 +35,8 @@ Here's my **example**!
 ```
 ````
 
+### Reverse source and result
+
 You can reverse the order of `source` and `result` by using the `:reverse:` flag, like so:
 
 ````{example}
@@ -43,15 +48,16 @@ Here's my **example**!
 
 You can also remove the parent container of the source/result blocks in case you wish to demonstrate something that would not work properly inside a container:
 
+### Remove the container with simple mode
 
-You can reverse the order of `source` and `result` by using the `:reverse:` flag, like so:
+You can remove the Sphinx Design container entirely, which simply places the source / result next to one another.
+This is useful if the container would prevent you from demonstrating some functionality:
 
 ````{example}
 :no-container:
 
 ```{example} No container so we can show off a margin
 :no-container:
-:reverse:
 
 :::{margin}
 Here's my **margin content**!
@@ -59,6 +65,8 @@ Here's my **margin content**!
 
 ```
 ````
+
+### Add your own class
 
 You can add your own classes to examples as well.
 For example:
@@ -68,6 +76,7 @@ For example:
 
 ```{example} A full-width example
 :class: full-width
+:no-container:
 
 :::{note}
 A full-width note!

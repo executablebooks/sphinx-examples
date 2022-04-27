@@ -46,6 +46,7 @@ Tracker = "https://github.com/executablebooks/sphinx-demo/issues"
 [project.optional-dependencies]
 sphinx = [
     "sphinx-book-theme",
+    "sphinx-copybutton",
     "myst-parser",
 ]
 
