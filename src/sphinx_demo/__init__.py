@@ -12,7 +12,7 @@ __version__ = "0.0.1"
 TEMPLATE_GRID = """
 ::::::::::::::::::::::::{{grid}}
 :gutter: 0
-:margin: 0
+:margin: 0 2 0 0
 :padding: 0
 :class-container: sd-example
 
@@ -116,9 +116,6 @@ class ExampleDirective(SphinxDirective):
         content_text = "\n".join(self.content)
 
         grid_items = []
-
-        # Update our content and place it in a container
-        container = nodes.container(classes=["sd-demo__container"])
 
         # Parse the template with Sphinx Design to create an output
         container = nodes.container()
