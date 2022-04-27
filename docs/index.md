@@ -11,6 +11,10 @@ Here's a sample note!
 :::
 ```
 
+:::{warning}
+This currently only works with MyST Markdown content, it will not work if you've written your documentation in reStructuredText.
+:::
+
 ## Install
 
 Install with pip:
