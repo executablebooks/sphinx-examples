@@ -11,7 +11,7 @@ release = ""
 
 
 # -- General configuration ---------------------------------------------------
-extensions = ["myst_parser", "sphinx_demo"]
+extensions = ["myst_parser", "sphinx_copybutton", "sphinx_demo", "sphinx_design"]
 templates_path = []
 master_doc = "index"
 language = None

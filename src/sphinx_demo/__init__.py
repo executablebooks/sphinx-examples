@@ -9,6 +9,90 @@ from sphinx.util.docutils import SphinxDirective
 __version__ = "0.0.1"
 
 
+TEMPLATE_GRID = """
+::::::::::::::::::::::::{{grid}}
+:gutter: 0
+:margin: 0
+:padding: 0
+:class-container: sd-example
+
+{content}
+
+::::::::::::::::::::::::
+"""
+
+TEMPLATE_TITLE = """
+:::::::::::::::::::::::{{grid-item}}
+:columns: 12
+:class: sd-example-title
+
+{content}
+
+:::::::::::::::::::::::
+"""
+
+TEMPLATE_SOURCE = """
+
+:::::::::::::::::::::::{{grid-item-card}}
+:columns: 12
+:shadow: none
+:class-header: bg-light py-1 fs-1
+:class-card: sd-example-source
+
+Source
+^^^
+
+``````````````````````````````
+{content}
+``````````````````````````````
+
+:::::::::::::::::::::::
+"""
+
+TEMPLATE_RESULT = """
+
+:::::::::::::::::::::::{{grid-item-card}}
+:columns: 12
+:shadow: none
+:class-header: bg-light py-1
+:class-card: sd-example-result
+
+
+Result
+^^^
+
+{content}
+
+
+:::::::::::::::::::::::
+"""
+
+
+TEMPLATE_SIMPLE = """
+**Source**
+
+````````````````````````````
+{content}
+````````````````````````````
+
+**Result**
+
+{content}
+"""
+
+TEMPLATE_SIMPLE_REVERSED = """
+**Result**
+
+{content}
+
+**Source**
+
+````````````````````````````
+{content}
+````````````````````````````
+"""
+
+
 def st_static_path(app):
     static_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "_static"))
     app.config.html_static_path.append(static_path)
@@ -31,39 +115,43 @@ class ExampleDirective(SphinxDirective):
     def run(self) -> List[nodes.Node]:
         content_text = "\n".join(self.content)
 
+        grid_items = []
+
         # Update our content and place it in a container
-        extra_classes = self.options.get("class", [])
-        output = nodes.container(classes=["sd-demo"] + extra_classes)
         container = nodes.container(classes=["sd-demo__container"])
 
-        # If we have a title, add it above the source code
-        if self.arguments:
-            title_container = nodes.container(classes=["sd-demo__title"])
-            title_container.append(nodes.paragraph(text=self.arguments[0]))
-            output.append(title_container)
-
-        # Create the literal container, add a literal version of the content to it
-        literal_container = nodes.container(classes=["sd-demo__source"])
-        literal_container.append(nodes.paragraph(text="Source"))
-        literal_container.append(nodes.literal_block(text=content_text))
-        container.append(literal_container)
-
-        # Now render the content inside of a specific container
-        rendered_container = nodes.container(classes=["sd-demo__result"])
-        rendered_container.append(nodes.paragraph(text="Result"))
-        self.state.nested_parse(self.content, 0, rendered_container)
-        container.append(rendered_container)
-
-        # Result should come first
-        if "reverse" in self.options:
-            container.children = container.children[::-1]
+        # Parse the template with Sphinx Design to create an output
+        container = nodes.container()
 
         # Remove the container styling if requested
         if "no-container" in self.options:
-            container.attributes["classes"].append("sd-nostyle")
+            if "reverse" in self.options:
+                simple_text = TEMPLATE_SIMPLE_REVERSED.format(content=content_text)
+            else:
+                simple_text = TEMPLATE_SIMPLE.format(content=content_text)
+            self.state.nested_parse([simple_text], 0, container)
+        else:
+            # If we have a title, add it above the source code
+            if self.arguments:
+                grid_items.append(TEMPLATE_TITLE.format(content=self.arguments[0]))
 
-        output.append(container)
-        return [output]
+            content_templates = [TEMPLATE_SOURCE, TEMPLATE_RESULT]
+            if "reverse" in self.options:
+                content_templates = content_templates[::-1]
+
+            for template in content_templates:
+                grid_items.append(template.format(content=content_text))
+
+            # Use Sphinx Design to parse content
+            grid_text = TEMPLATE_GRID.format(content="\n".join(grid_items))
+            self.state.nested_parse([grid_text], 0, container)
+            # Sphinx Design outputs a container too, so just use that
+            container = container.children[0]
+
+        # Add extra classes
+        if self.options.get("class", []):
+            container.attributes["classes"] += self.options.get("class", [])
+        return [container]
 
 
 # We connect this function to the step after the builder is initialized
