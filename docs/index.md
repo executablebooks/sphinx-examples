@@ -53,10 +53,10 @@ You can also remove the parent container of the source/result blocks in case you
 You can remove the Sphinx Design container entirely, which simply places the source / result next to one another.
 This is useful if the container would prevent you from demonstrating some functionality:
 
-````{example}
+````{example} No container so we can show off a margin
 :no-container:
 
-```{example} No container so we can show off a margin
+```{example}
 :no-container:
 
 :::{margin}

@@ -126,6 +126,9 @@ class ExampleDirective(SphinxDirective):
                 simple_text = TEMPLATE_SIMPLE_REVERSED.format(content=content_text)
             else:
                 simple_text = TEMPLATE_SIMPLE.format(content=content_text)
+
+            if self.arguments:
+                simple_text = f"**{self.arguments[0]}**\n\n" + simple_text
             self.state.nested_parse([simple_text], 0, container)
         else:
             # If we have a title, add it above the source code
