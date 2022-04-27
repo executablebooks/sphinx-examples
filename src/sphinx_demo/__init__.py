@@ -156,6 +156,9 @@ class ExampleDirective(SphinxDirective):
 
 # We connect this function to the step after the builder is initialized
 def setup(app):
+    # Activate Sphinx design
+    app.setup_extension("sphinx_design")
+
     # Add our static path
     app.connect("builder-inited", st_static_path)
     app.add_css_file("styles/sphinx-demo.css")
