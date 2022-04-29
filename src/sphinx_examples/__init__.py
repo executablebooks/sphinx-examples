@@ -161,7 +161,7 @@ def setup(app):
 
     # Add our static path
     app.connect("builder-inited", st_static_path)
-    app.add_css_file("styles/sphinx-demo.css")
+    app.add_css_file("styles/sphinx-examples.css")
 
     # Add directives
     app.add_directive("example", ExampleDirective)

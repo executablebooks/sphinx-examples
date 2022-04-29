@@ -1,6 +1,6 @@
-# `sphinx-demo`
+# `sphinx-examples`
 
-A small sphinx extension to add "demo buttons" that allow you to show off source markdown and the result of rendering it in Sphinx.
+A small sphinx extension to add "example snippets" that allow you to show off source markdown and the result of rendering it in Sphinx.
 
 For example:
 
@@ -20,7 +20,7 @@ This currently only works with MyST Markdown content, it will not work if you've
 Install with pip:
 
 ```console
-$ pip install sphinx-demo
+$ pip install sphinx-examples
 ```
 
 ## Use

@@ -3,7 +3,7 @@ requires = ["flit_core >=3.5,<4"]
 build-backend = "flit_core.buildapi"
 
 [project]
-name = "sphinx-demo"
+name = "sphinx-examples"
 authors = [{name = "Executable Book Project", email = "executablebooks@gmail.com"}]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -40,8 +40,8 @@ content-type = "text/markdown"
 Homepage = "https://executablebooks.org/"
 Documentation = "https://executablebooks.org/"
 Funding = "https://executablebooks.org"
-Source = "https://github.com/executablebooks/sphinx-demo/"
-Tracker = "https://github.com/executablebooks/sphinx-demo/issues"
+Source = "https://github.com/executablebooks/sphinx-examples/"
+Tracker = "https://github.com/executablebooks/sphinx-examples/issues"
 
 [project.optional-dependencies]
 sphinx = [
@@ -51,11 +51,11 @@ sphinx = [
 ]
 
 [tool.flit.module]
-name = "sphinx_demo"
+name = "sphinx_examples"
 
 [tool.flit.sdist]
 include = [
-    "src/sphinx_demo/_static/"
+    "src/sphinx_examples/_static/"
 ]
 exclude = [
   ".*",  # Any hidden folders or files

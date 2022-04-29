@@ -1,4 +1,4 @@
-# sphinx-demo
+# sphinx-examples
 
 A small Sphinx extension to create examples of source markup and the result of rendering it in your documentation.
 This is useful if you wish to demonstrate the functionality of a new directive or role in Sphinx.
@@ -7,15 +7,15 @@ This is useful if you wish to demonstrate the functionality of a new directive o
 
 ## Installation
 
-You can install `sphinx-demo` with `pip`:
+You can install `sphinx-examples` with `pip`:
 
 ```bash
-pip install sphinx-demo
+pip install sphinx-examples
 ```
 
 ## Usage
 
-See [the `sphinx-demo` documentation](https://ebp-sphinx-demo.readthedocs.io/en/latest/) for more information.
+See [the `sphinx-examples` documentation](https://ebp-sphinx-examples.readthedocs.io/en/latest/) for more information.
 
 ## Develop
 
@@ -24,8 +24,8 @@ To develop this extension, follow these steps:
 1. **Clone the repository locally**
 
    ```console
-   $ git clone https://github.com/executablebooks/sphinx-demo
-   $ cd sphinx-demo
+   $ git clone https://github.com/executablebooks/sphinx-examples
+   $ cd sphinx-examples
    ```
 2. **Install pre-commit hooks**
 
@@ -38,7 +38,7 @@ To develop this extension, follow these steps:
    $ pip install -e .[sphinx]
    ```
 
-The codebase for this package is in `src/sphinx_demo`.
+The codebase for this package is in `src/sphinx_examples`.
 Documentation is in `docs/`.
 
 This package has no testing infrastructure, so be careful when using it!
