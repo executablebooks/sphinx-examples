@@ -9,3 +9,7 @@
     margin: 0;
     font-size:.9em;
 }
+
+.sd-example-source div[class*="highlight-"], .sd-example-source div.highlight {
+    margin: 0;
+}
