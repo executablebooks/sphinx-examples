@@ -1,17 +1,22 @@
 /**
  * Example directive styling
  */
-.sd-example .sd-card-header {
-    font-size: .8em;
-}
 
 .sd-example-title p {
-    margin: 0;
-    font-size:.9em;
+    margin: 0 0 .2em 0;
+    font-size: .9em;
+    font-style: italic;
 }
 
 .sd-example-source div[class*="highlight-"], .sd-example-source div.highlight {
     margin: 0;
+}
+
+.sd-example-source pre {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 1.5rem 1rem;
 }
 
 /* Cards should be flush w/ one another at their intersection */
