@@ -36,8 +36,9 @@ TEMPLATE_SOURCE = """
 :::::::::::::::::::::::{{grid-item-card}}
 :columns: 12
 :shadow: none
+:class-item: sd-example-item
 :class-header: bg-light py-1 fs-1
-:class-card: sd-example-source
+:class-card: sd-example-source{extra_classes}
 
 Source
 ^^^
@@ -54,8 +55,9 @@ TEMPLATE_RESULT = """
 :::::::::::::::::::::::{{grid-item-card}}
 :columns: 12
 :shadow: none
+:class-item: sd-example-item
 :class-header: bg-light py-1
-:class-card: sd-example-result
+:class-card: sd-example-result{extra_classes}
 
 
 Result
@@ -139,8 +141,10 @@ class ExampleDirective(SphinxDirective):
             if "reverse" in self.options:
                 content_templates = content_templates[::-1]
 
-            for template in content_templates:
-                grid_items.append(template.format(content=content_text))
+            extra_classes = [" sd-flat-bottom", " sd-flat-top"]
+            for (template, classes) in zip(content_templates, extra_classes):
+                template = template.format(content=content_text, extra_classes=classes)
+                grid_items.append(template)
 
             # Use Sphinx Design to parse content
             grid_text = TEMPLATE_GRID.format(content="\n".join(grid_items))

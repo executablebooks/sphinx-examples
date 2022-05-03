@@ -13,3 +13,15 @@
 .sd-example-source div[class*="highlight-"], .sd-example-source div.highlight {
     margin: 0;
 }
+
+/* Cards should be flush w/ one another at their intersection */
+.sd-card.sd-flat-bottom {
+    border-bottom-right-radius: 0em;
+    border-bottom-left-radius: 0em;
+    border-bottom: 0;
+}
+
+.sd-card.sd-flat-top {
+    border-top-right-radius: 0em;
+    border-top-left-radius: 0em;
+}
