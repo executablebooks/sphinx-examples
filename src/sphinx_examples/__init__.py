@@ -10,7 +10,7 @@ __version__ = "0.0.3"
 
 
 TEMPLATE_GRID = """
-::::::::::::::::::::::::{{grid}}
+`````````````````````````````````````{{grid}}
 :gutter: 0
 :margin: 0 2 0 0
 :padding: 0
@@ -18,47 +18,45 @@ TEMPLATE_GRID = """
 
 {content}
 
-::::::::::::::::::::::::
+`````````````````````````````````````
 """
 
 TEMPLATE_TITLE = """
-:::::::::::::::::::::::{{grid-item}}
+````````````````````````````````````{{grid-item}}
 :columns: 12
 :class: sd-example-title
 
 {content}
 
-:::::::::::::::::::::::
+````````````````````````````````````
 """
 
 TEMPLATE_SOURCE = """
 
-:::::::::::::::::::::::{{grid-item-card}}
+````````````````````````````````````{{grid-item}}
 :columns: 12
-:shadow: none
-:class-item: sd-example-item
-:class-card: sd-example-source {extra_classes}
-:class-body: sd-p-0
+:class: sd-example-item sd-example-source {extra_classes}
 
 ``````````````````````````````markdown
+
 {content}
+
 ``````````````````````````````
 
-:::::::::::::::::::::::
+````````````````````````````````````
 """
 
 TEMPLATE_RESULT = """
 
-:::::::::::::::::::::::{{grid-item-card}}
+````````````````````````````````````{{grid-item}}
 :columns: 12
-:shadow: none
-:class-item: sd-example-item
-:class-card: sd-example-result {extra_classes}
+:class: sd-example-item p-3 sd-example-result {extra_classes}
 
+```````````````````````````````````{{div}} result-content
 {content}
+```````````````````````````````````
 
-
-:::::::::::::::::::::::
+````````````````````````````````````
 """
 
 
@@ -133,7 +131,7 @@ class ExampleDirective(SphinxDirective):
             if "reverse" in self.options:
                 content_templates = content_templates[::-1]
 
-            extra_classes = ["sd-flat-bottom", "sd-flat-top"]
+            extra_classes = ["sd-rounded-top", "sd-rounded-bottom"]
             for (template, classes) in zip(content_templates, extra_classes):
                 template = template.format(content=content_text, extra_classes=classes)
                 grid_items.append(template)
