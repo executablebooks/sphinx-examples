@@ -55,3 +55,7 @@ sphinx-build docs docs/_build/html
 ```
 
 Then browse the HTML files in `docs/_build/html` to see the rendered documentation.
+
+## Inspiration
+
+This project takes heavy inspiration from the [Bootstrap v5 documenation](https://getbootstrap.com/docs/5.0/utilities/borders/#border).
