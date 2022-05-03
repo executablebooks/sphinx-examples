@@ -6,14 +6,10 @@ For example:
 
 ````{example} Showing off a card and note directive
 
-```{card}
-:class-header: bg-light
-A note!
-^^^
 :::{note}
 Here's a sample note!
 :::
-```
+
 
 ````
 
@@ -93,5 +89,6 @@ A full-width note!
 ````
 
 ```{toctree}
+reference
 changelog
 ```

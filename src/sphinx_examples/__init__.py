@@ -53,7 +53,9 @@ TEMPLATE_RESULT = """
 :class: sd-example-item p-3 sd-example-result {extra_classes}
 
 ```````````````````````````````````{{div}} result-content
+
 {content}
+
 ```````````````````````````````````
 
 ````````````````````````````````````
