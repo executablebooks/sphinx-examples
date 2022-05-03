@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.0.4
+
+Converting to using `{grid}` instead of `{card}` to fix parsing examples with `{card}` directives.
+
 ## v0.0.3
 
 Simplifying the user-interface of the resulting CSS.
