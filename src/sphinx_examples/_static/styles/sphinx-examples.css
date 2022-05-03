@@ -1,15 +1,33 @@
 /**
  * Example directive styling
  */
-.sd-example .sd-card-header {
-    font-size: .8em;
-}
-
 .sd-example-title p {
-    margin: 0;
-    font-size:.9em;
+    margin: 0 0 .2em 0;
+    font-size: .9em;
+    font-style: italic;
 }
 
-.sd-example-source div[class*="highlight-"], .sd-example-source div.highlight {
+.sd-example-source div[class*="highlight-"],
+.sd-example-source div.highlight,
+.sd-example-source pre {
     margin: 0;
+    border: none;
+    box-shadow: none;
+    border-radius: .25rem; /* Same as .sd-card */
+}
+
+.sd-example-source pre {
+    padding: 1.5rem 1rem;
+}
+
+/* Cards should be flush w/ one another at their intersection */
+.sd-example .sd-card.sd-flat-bottom {
+    border-bottom-right-radius: 0em;
+    border-bottom-left-radius: 0em;
+    border-bottom: 0;
+}
+
+.sd-example .sd-card.sd-flat-top {
+    border-top-right-radius: 0em;
+    border-top-left-radius: 0em;
 }
