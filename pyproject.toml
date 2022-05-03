@@ -48,6 +48,9 @@ sphinx = [
     "sphinx-book-theme",
     "sphinx-copybutton",
     "myst-parser",
+    # Extra theme dependencies to test
+    "sphinx-rtd-theme",
+    "furo",
 ]
 
 [tool.flit.module]
