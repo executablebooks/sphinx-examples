@@ -4,16 +4,23 @@ A small sphinx extension to add "example snippets" that allow you to show off so
 
 For example:
 
-```{example} Showing off a note directive
+````{example} Showing off a card and note directive
 
+```{card}
+:class-header: bg-light
+A note!
+^^^
 :::{note}
 Here's a sample note!
 :::
 ```
 
+````
+
 :::{warning}
 This currently only works with MyST Markdown content, it will not work if you've written your documentation in reStructuredText.
 :::
+
 
 ## Install
 

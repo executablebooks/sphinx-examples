@@ -7,6 +7,10 @@
     font-style: italic;
 }
 
+.sd-example-item {
+    border: 1px solid var(--sd-color-card-border);
+}
+
 .sd-example-source div[class*="highlight-"],
 .sd-example-source div.highlight,
 .sd-example-source pre {
@@ -21,13 +25,13 @@
 }
 
 /* Cards should be flush w/ one another at their intersection */
-.sd-example .sd-card.sd-flat-bottom {
-    border-bottom-right-radius: 0em;
-    border-bottom-left-radius: 0em;
-    border-bottom: 0;
+.sd-example .sd-rounded-bottom {
+    border-bottom-right-radius: .25rem;
+    border-bottom-left-radius: .25rem;
 }
 
-.sd-example .sd-card.sd-flat-top {
-    border-top-right-radius: 0em;
-    border-top-left-radius: 0em;
+.sd-example .sd-rounded-top {
+    border-top-right-radius: .25rem;
+    border-top-left-radius: .25rem;
+    border-bottom: 0;
 }
