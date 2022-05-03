@@ -6,7 +6,7 @@ from docutils import nodes
 from docutils.parsers.rst import directives
 from sphinx.util.docutils import SphinxDirective
 
-__version__ = "0.0.4"
+__version__ = "0.0.5"
 
 
 TEMPLATE_GRID = """
